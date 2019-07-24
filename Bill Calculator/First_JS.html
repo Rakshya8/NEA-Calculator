@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>html,
+body {
+  font-family : Monospace;
+  background-color : #33B8FF;
+  color : white;
+}
+.reducedCol {
+  margin-top:10vh;
+  background-color :#8F8FC2;
+  border : 0px #FFF solid;
+}
+
+.inp {
+  background-color : #6B6B84;
+  color : #FFF;
+  font-color : #FFF;
+  border : 2px solid white;
+  transition : background-color 0.5s,border 0.5s;
+}
+.inp:focus {
+  background-color : #33B8FF;
+  outline : none !important;
+  border-color: black;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.inp:hover {
+  outline : none !important;
+  border-color: #39FF14;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.box {
+  display  : block;
+}
+.change {
+  font-size  : 3em;
+}
+
+
+.getButton {
+  background-color : #010101 !important;
+  
+  transition : background-color 1s,border 1s;
+  color : white !important;
+}
+
+.getButton:hover {
+  border : 1.5px solid white;
+  background-color : #353535 !important;
+  color : white !important;
+}
+        </style>
+    </head>
+    <title>
+        Electircal Bill Calculator
+    </title>
+    <body>
+        <h1 style="color: azure; margin-left: 350px;">Electricity bill of NEA calculated in Seconds</h1>
+        <hr style="color: aliceblue">
+        <br>
+        <script>
+             function checkSub(){
+                 var amp=document.getElementById("amp").value;
+                 var p1= document.getElementById("curr").value;
+                 var p2= document.getElementById("prev").value;
+                 var min = p1 - p2;
+                 var sc=[[30, 50, 75, 100, 125, 150, 175],[50, 75, 100, 125, 150, 175, 200], 
+                    [75, 100, 125, 150, 175, 200, 225],[100, 125, 150, 175, 200, 250]];
+                 if (amp==5){
+                     if (min<=20){
+                         charge=min*3+sc[0][0]; display();
+                     }
+                         
+                     else if(min<=30){
+                          charge=(20*3)+(min-20)*7+sc[0][1]; display();
+                     }
+                        
+                      else if(min<=50){
+                          charge=(20*3)+(30*7)+(50*8.5)+(min-30)*10+sc[0][2]; display();
+                      }
+                         
+                     else if(min<=150){
+                         charge=(20*3)+(30*7)+(50*8.50)+150*10+(min-50)*11+sc[0][3];display();
+                     }
+                         
+                     else if(min<=250){
+                         charge=(20*3)+(30*7)+(50*8.50)+150*10+(min-150)*11+sc[0][4];display();
+                     }
+                         
+                     else if(min<=400){
+                          charge=(20*3)+(30*7)+(50*8.50)+150*10+(min-250)*11+(min-250)*12+sc[0][5];display();
+                     }
+                        
+                     else{
+                         charge=(20*3)+(30*7)+(50*8.50)+150*10+250*11+250*12+(min-400)*13+sc[0][6]; display();
+                     }
+                         
+                 }
+                                          if (amp==15){
+                     if (min<=20){
+                         charge=min*4+sc[1][0]; display();
+                     }
+                         
+                     else if(min<=30){
+                          charge=(20*4)+(min-20)*7+sc[1][1]; display();
+                     }
+                        
+                      else if(min<=50){
+                          charge=(20*4)+(30*7)+(50*8.5)+(min-30)*10+sc[1][2]; display();
+                      }
+                         
+                     else if(min<=150){
+                         charge=(20*4)+(30*7)+(50*8.50)+150*10+(min-50)*11+sc[1][3];display();
+                     }
+                         
+                     else if(min<=250){
+                         charge=(20*4)+(30*7)+(50*8.50)+150*10+(min-150)*11+sc[1][4];display();
+                     }
+                         
+                     else if(min<=400){
+                          charge=(20*4)+(30*7)+(50*8.50)+150*10+(min-250)*11+(min-250)*12+sc[1][5];display();
+                     }
+                        
+                     else{
+                         charge=(20*4)+(30*7)+(50*8.50)+150*10+250*11+250*12+(min-400)*13+sc[1][6]; display();
+                     }
+                         
+                 }
+                  if (amp==30){
+                     if (min<=20){
+                         charge=min*5+sc[2][0]; display();
+                     }
+                         
+                     else if(min<=30){
+                          charge=(20*5)+(min-20)*7+sc[2][1]; display();
+                     }
+                        
+                      else if(min<=50){
+                          charge=(20*5)+(30*7)+(50*8.5)+(min-30)*10+sc[2][2]; display();
+                      }
+                         
+                     else if(min<=150){
+                         charge=(20*5)+(30*7)+(50*8.50)+150*10+(min-50)*11+sc[2][3];display();
+                     }
+                         
+                     else if(min<=250){
+                         charge=(20*5)+(30*7)+(50*8.50)+150*10+(min-150)*11+sc[2][4];display();
+                     }
+                         
+                     else if(min<=400){
+                          charge=(20*5)+(30*7)+(50*8.50)+150*10+(min-250)*11+(min-250)*12+sc[2][5];display();
+                     }
+                        
+                     else{
+                         charge=(20*3)+(30*7)+(50*8.50)+150*10+250*11+250*12+(min-400)*13+sc[2][6]; display();
+                     }
+                         
+                 }
+                  if (amp==60){
+                     if (min<=20){
+                         charge=min*6+sc[3][0]; display();
+                     }
+                         
+                     else if(min<=30){
+                          charge=(20*6)+(min-20)*7+sc[3][1]; display();
+                     }
+                        
+                      else if(min<=50){
+                          charge=(20*6)+(30*7)+(50*8.5)+(min-30)*10+sc[3][2]; display();
+                      }
+                         
+                     else if(min<=150){
+                         charge=(20*6)+(30*7)+(50*8.50)+150*10+(min-50)*11+sc[3][3];display();
+                     }
+                         
+                     else if(min<=250){
+                         charge=(20*6)+(30*7)+(50*8.50)+150*10+(min-150)*11+sc[3][4];display();
+                     }
+                         
+                     else if(min<=400){
+                          charge=(20*6)+(30*7)+(50*8.50)+150*10+(min-250)*11+(min-250)*12+sc[3][5];display();
+                     }
+                        
+                     else{
+                         charge=(20*6)+(30*7)+(50*8.50)+150*10+250*11+250*12+(min-400)*13+sc[3][6]; display();
+                     }                     
+                 }
+                 
+             }
+    
+             function display(){
+                 alert("Are The Details Correct");
+                 document.getElementById("bill").innerHTML="Npr."+charge;
+             }
+            
+        </script>
+        <img src="electric-tarif.jpg" style="width:1000px; height: 500px; margin-left: 200px">
+        <table></table>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 reducedCol well text-center">
+      <form action="#box" role="form" name="elecForm" class="form">
+        <fieldset class="form-group form-inline">
+
+            <label for="curr">Current Reading</label> <input class="form-control inp" id="curr" type="number" value="" placeholder="Units in kWh">
+
+          <label for="prev">Previous Reading</label> <input class="form-control inp" id="prev" type="" value="" placeholder="Units in kWh">
+        
+          <label for="amp">Ampere</label> <input class="form-control inp" id="amp" type="" value="" placeholder="Units in Ampere(5, 15, 30, 60)">
+
+        </fieldset>
+
+        <fieldset class="form-group form-inline">
+          <label for="startDate">Start Date</label>
+          <input class="form-control inp" name="startDate" type="date">
+          <label for="endDate">End Date</label>
+          <input class="form-control inp" name="endDate" type="date">
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <button class="btn bg-primary getButton" type="button" onClick="checkSub()">Get Bill</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+      <div class="box text-responsive" id="#box">
+        <center>
+          <h2>Bill : </h2><span class="change" id="bill"></span></center>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+         
+    </body>
+    </html>
